@@ -24,9 +24,9 @@ const props = defineProps<PaginatedResponse<User>>();
     >
         <PaginationContent v-slot="{ items }">
             <PaginationPrevious />
-            <template v-for="(item, index) in items" :key="index">
-                <PaginationItem v-if="item.type === 'page'" :value="item.value" :is-active="item.value === page">
-                    {{ item.value }}
+            <template v-for="(item, index) in links" :key="index">
+                <PaginationItem :value="item.url" :is-active="item.active">
+                    {{ item.label }}
                 </PaginationItem>
             </template>
             <PaginationEllipsis :index="4" />

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Pagination from '@/components/pagination.vue';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -65,5 +66,19 @@ const props = defineProps<Props>();
                 </TableRow>
             </TableBody>
         </Table>
+        <Pagination
+            :current_page="props.users.current_page"
+            :first_page_url="props.users.first_page_url"
+            :from="props.users.from"
+            :last_page="props.users.last_page"
+            :last_page_url="props.users.last_page_url"
+            :links="props.users.links"
+            :next_page_url="props.users.next_page_url"
+            :path="props.users.path"
+            :per_page="props.users.per_page"
+            :prev_page_url="props.users.prev_page_url"
+            :to="props.users.to"
+            :total="props.users.total"
+        />
     </AppLayout>
 </template>
